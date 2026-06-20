@@ -60,9 +60,9 @@ function Reveal({ children, delay = 0, style = {}, as = "div" }) {
 // super_inline_html exposes inlined data-URIs on window.__resources keyed by the
 // data-resource-id of each <meta name="ext-resource-dependency">. One resolver, both builds.
 window.ASSETS = {
-  logoWhite: "../../assets/logos/oltra-logo-white.png",
-  markWhite: "../../assets/logos/oltra-mark-white.png",
-  markNavy: "../../assets/logos/oltra-mark.png",
+  logoWhite: "assets/logos/oltra-logo-white.png",
+  markWhite: "assets/logos/oltra-mark-white.png",
+  markNavy: "assets/logos/oltra-mark.png",
 };
 window.assetUrl = (k) => (window.__resources && window.__resources[k]) || window.ASSETS[k];
 
