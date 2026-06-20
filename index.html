@@ -1,0 +1,100 @@
+<!-- @dsCard group="Landing" viewport="1280x760" name="Oltra Systems — Landing" subtitle="Full marketing page with live leak calculator" -->
+<!-- @startingPoint section="Landing" subtitle="Oltra Systems marketing landing page" viewport="1280x900" -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Oltra Systems — Más pacientes. Menos caos operativo.</title>
+<link rel="icon" href="assets/logos/oltra-mark.png" />
+<link rel="stylesheet" href="styles.css" />
+<style>
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; font-family: var(--font-sans); background: #111827; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+  a { -webkit-tap-highlight-color: transparent; }
+
+  /* Range slider */
+  .oltra-range { -webkit-appearance: none; appearance: none; width: 100%; height: 6px; border-radius: 999px; background: #E2E8F0; outline: none; cursor: pointer; }
+  .oltra-range::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 20px; height: 20px; border-radius: 999px; background: #111827; border: 3px solid #fff; box-shadow: 0 1px 3px rgba(15,23,42,0.25); cursor: pointer; transition: transform 140ms cubic-bezier(0.16,1,0.3,1); }
+  .oltra-range::-webkit-slider-thumb:hover { transform: scale(1.12); }
+  .oltra-range::-moz-range-thumb { width: 20px; height: 20px; border-radius: 999px; background: #111827; border: 3px solid #fff; box-shadow: 0 1px 3px rgba(15,23,42,0.25); cursor: pointer; }
+  .oltra-range::-moz-range-track { height: 6px; border-radius: 999px; background: #E2E8F0; }
+
+  .nav-burger, .nav-mobile { display: none; }
+
+  /* Lead-magnet spinner */
+  @keyframes lm-spin { to { transform: rotate(360deg); } }
+  .lm-spin { animation: lm-spin 0.7s linear infinite; }
+
+  @media (max-width: 880px) {
+    .hero-grid { grid-template-columns: 1fr !important; }
+    .calc-grid, .qual-grid, .lm-grid { grid-template-columns: 1fr !important; }
+    .grid-3, .grid-4 { grid-template-columns: 1fr !important; }
+    .svc .featured-shift { margin: 0 !important; }
+    .nav-links { display: none !important; }
+    .nav-burger { display: inline-flex !important; }
+    /* CRM demo: drop the info column, stack leads over chat */
+    .crm-grid { grid-template-columns: 1fr !important; }
+    .crm-col-info { display: none !important; }
+    .crm-col-leads { border-right: none !important; border-bottom: 1px solid rgba(148,163,184,0.12) !important; max-height: 220px; }
+    .crm-chat-body { min-height: 280px; }
+  }
+  @media (max-width: 620px) {
+    .cmp-row { grid-template-columns: 1fr !important; }
+    .cmp-row > div { border-left: none !important; }
+    .lm-row { flex-direction: column !important; }
+    .grid-3 { grid-template-columns: 1fr !important; }
+  }
+</style>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="_ds_bundle.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel" src="icons.jsx"></script>
+  <script type="text/babel" src="shared.jsx"></script>
+  <script type="text/babel" src="Navbar.jsx"></script>
+  <script type="text/babel" src="Hero.jsx"></script>
+  <script type="text/babel" src="Problem.jsx"></script>
+  <script type="text/babel" src="Calculator.jsx"></script>
+  <script type="text/babel" src="Process.jsx"></script>
+  <script type="text/babel" src="CrmDemo.jsx"></script>
+  <script type="text/babel" src="Services.jsx"></script>
+  <script type="text/babel" src="Comparison.jsx"></script>
+  <script type="text/babel" src="Qualification.jsx"></script>
+  <script type="text/babel" src="LeadMagnets.jsx"></script>
+  <script type="text/babel" src="SelfDiagnosis.jsx"></script>
+  <script type="text/babel" src="Faq.jsx"></script>
+  <script type="text/babel" src="FinalCta.jsx"></script>
+  <script type="text/babel" data-presets="react">
+    function App() {
+      return (
+        <>
+          <window.Navbar />
+          <main>
+            <window.Hero />
+            <window.Problem />
+            <window.Calculator />
+            <window.Process />
+            <window.CrmDemo />
+            <window.Services />
+            <window.Comparison />
+            <window.Qualification />
+            <window.FiveLeaks />
+            <window.WhatsappTemplates />
+            <window.SelfDiagnosis />
+            <window.Faq />
+            <window.FinalCta />
+          </main>
+          <window.Footer />
+        </>
+      );
+    }
+    ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+  </script>
+</body>
+</html>
