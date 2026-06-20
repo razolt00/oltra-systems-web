@@ -1,7 +1,171 @@
 /* Oltra Systems — Global stylesheet entry point.
    Consumers link this one file. Keep it as @import lines only. */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
-@import "./tokens/colors.css";
-@import "./tokens/typography.css";
-@import "./tokens/spacing.css";
-@import "./tokens/elevation.css";
+:root {
+  /* ---- Base palette ---- */
+  --carbon: #111827;        /* primary dark background — carbon black */
+  --steel-deep: #1E293B;    /* secondary dark background — deep steel */
+  --steel: #334155;         /* accent / steel blue */
+  --steel-line: #2B3A4F;    /* hairline borders on dark surfaces */
+  --steel-accent: #3E5573;  /* the muted blue accent square in the logo */
+
+  --paper: #F8FAFC;         /* light alternating section background */
+  --paper-card: #FFFFFF;    /* card surface on light sections */
+  --paper-line: #E2E8F0;    /* hairline borders on light surfaces */
+
+  --white: #FFFFFF;
+  --ink: #111827;           /* text on light surfaces */
+
+  /* Neutral steel ramp (cool grays) */
+  --slate-50:  #F8FAFC;
+  --slate-100: #F1F5F9;
+  --slate-200: #E2E8F0;
+  --slate-300: #CBD5E1;
+  --slate-400: #94A3B8;
+  --slate-500: #64748B;
+  --slate-600: #475569;
+  --slate-700: #334155;
+  --slate-800: #1E293B;
+  --slate-900: #0F172A;
+
+  /* Functional (used sparingly, muted — never neon) */
+  --danger: #B91C1C;        /* lost money / leaks */
+  --danger-soft: #7F1D1D;
+  --positive: #15803D;      /* captured / converted */
+  --warning: #B45309;
+
+  /* ---- Semantic aliases ---- */
+  --surface-base: var(--carbon);
+  --surface-alt: var(--steel-deep);
+  --surface-light: var(--paper);
+  --surface-card-dark: var(--steel-deep);
+  --surface-card-light: var(--paper-card);
+
+  --text-on-dark: var(--white);
+  --text-on-dark-muted: #94A3B8;     /* slate-400 */
+  --text-on-dark-subtle: #64748B;    /* slate-500 */
+  --text-on-light: var(--ink);
+  --text-on-light-muted: #475569;    /* slate-600 */
+  --text-on-light-subtle: #64748B;
+
+  --border-dark: var(--steel-line);
+  --border-light: var(--paper-line);
+  --accent: var(--steel);
+
+  --eyebrow: #94A3B8;       /* eyebrow label color on dark */
+  --eyebrow-light: #64748B; /* eyebrow label color on light */
+
+  /* Focus ring */
+  --focus-ring: rgba(148, 163, 184, 0.55);
+}
+
+:root {
+  /* ---- Families ---- */
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: "SFMono-Regular", ui-monospace, "Menlo", "Consolas", monospace;
+
+  /* ---- Weights ---- */
+  --fw-regular: 400;   /* @kind font */ /* body */
+  --fw-medium: 500;    /* @kind font */
+  --fw-semibold: 600;  /* @kind font */ /* subheadings, eyebrows, UI labels */
+  --fw-bold: 700;      /* @kind font */ /* headlines, logo */
+  --fw-extrabold: 800; /* @kind font */ /* hero headlines */
+
+  /* ---- Type scale (rem; 1rem = 16px) ---- */
+  --text-xs:   0.75rem;   /* 12px — legal, captions */
+  --text-sm:   0.875rem;  /* 14px — fine print, metadata */
+  --text-base: 1rem;      /* 16px — body */
+  --text-md:   1.125rem;  /* 18px — lead body */
+  --text-lg:   1.25rem;   /* 20px — large body / card titles */
+  --text-xl:   1.5rem;    /* 24px — subheadline */
+  --text-2xl:  1.875rem;  /* 30px — section sub */
+  --text-3xl:  2.25rem;   /* 36px — section headline */
+  --text-4xl:  3rem;      /* 48px — large headline */
+  --text-5xl:  3.75rem;   /* 60px — hero headline */
+  --text-6xl:  4.5rem;    /* 72px — display */
+
+  /* ---- Line heights ---- */
+  --leading-tight: 1.08;   /* hero / display headlines */
+  --leading-snug: 1.2;     /* section headlines */
+  --leading-normal: 1.5;   /* body */
+  --leading-relaxed: 1.65; /* long-form body */
+
+  /* ---- Letter spacing ---- */
+  --tracking-tight: -0.03em;   /* large headlines */
+  --tracking-snug: -0.015em;   /* subheads */
+  --tracking-normal: 0;
+  --tracking-wide: 0.08em;     /* eyebrows */
+  --tracking-wider: 0.15em;    /* logo, all-caps labels */
+
+  /* ---- Semantic roles ---- */
+  --type-hero: var(--fw-extrabold) var(--text-5xl)/var(--leading-tight) var(--font-sans);
+  --type-headline: var(--fw-bold) var(--text-3xl)/var(--leading-snug) var(--font-sans);
+  --type-subhead: var(--fw-semibold) var(--text-xl)/var(--leading-snug) var(--font-sans);
+  --type-body: var(--fw-regular) var(--text-base)/var(--leading-relaxed) var(--font-sans);
+  --type-lead: var(--fw-regular) var(--text-md)/var(--leading-relaxed) var(--font-sans);
+}
+
+:root {
+  /* ---- Spacing scale (4px base grid) ---- */
+  --space-0: 0;
+  --space-1: 0.25rem;  /* 4 */
+  --space-2: 0.5rem;   /* 8 */
+  --space-3: 0.75rem;  /* 12 */
+  --space-4: 1rem;     /* 16 */
+  --space-5: 1.25rem;  /* 20 */
+  --space-6: 1.5rem;   /* 24 */
+  --space-8: 2rem;     /* 32 */
+  --space-10: 2.5rem;  /* 40 */
+  --space-12: 3rem;    /* 48 */
+  --space-16: 4rem;    /* 64 */
+  --space-20: 5rem;    /* 80 */
+  --space-24: 6rem;    /* 96 */
+  --space-32: 8rem;    /* 128 */
+
+  /* Section rhythm */
+  --section-pad-y: 6rem;       /* vertical padding per section (desktop) */
+  --section-pad-y-sm: 3.5rem;  /* mobile */
+  --container-max: 1200px;     /* page content max-width */
+  --container-pad-x: 1.5rem;   /* gutter */
+
+  /* ---- Radii ---- */
+  --radius-none: 0;
+  --radius-sm: 4px;    /* inputs, small chips */
+  --radius-md: 8px;    /* buttons, badges */
+  --radius-lg: 12px;   /* cards */
+  --radius-xl: 16px;   /* feature cards, dashboard panels */
+  --radius-pill: 999px;
+
+  /* ---- Border widths ---- */
+  --border-thin: 1px;
+  --border-thick: 1.5px;
+}
+
+:root {
+  /* ---- Elevation ---- */
+  /* Dark surfaces rely on hairline borders + faint inner glow, not drop shadows. */
+  --shadow-none: none;
+
+  /* Light-surface shadows — soft, cool-tinted, low spread (premium B2B, not floaty) */
+  --shadow-xs: 0 1px 2px rgba(15, 23, 42, 0.06);
+  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.08), 0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.08), 0 2px 4px rgba(15, 23, 42, 0.04);
+  --shadow-lg: 0 12px 28px rgba(15, 23, 42, 0.10), 0 4px 8px rgba(15, 23, 42, 0.05);
+  --shadow-xl: 0 24px 48px rgba(15, 23, 42, 0.12);
+
+  /* Dark-surface depth — subtle ring + lift */
+  --ring-dark: inset 0 0 0 1px rgba(148, 163, 184, 0.12); /* @kind shadow */
+  --ring-dark-hover: inset 0 0 0 1px rgba(148, 163, 184, 0.22); /* @kind shadow */
+  --shadow-dark-lift: 0 20px 40px rgba(0, 0, 0, 0.35);
+
+  /* Focus */
+  --focus-shadow: 0 0 0 3px var(--focus-ring);
+
+  /* ---- Motion ---- */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);     /* @kind other */
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1); /* @kind other */
+  --dur-fast: 140ms;     /* @kind other */
+  --dur-base: 240ms;     /* @kind other */
+  --dur-slow: 600ms;     /* @kind other */
+}
+
