@@ -27,12 +27,12 @@ function Hero() {
           </window.Reveal>
 
           <window.Reveal delay={120}>
-            <Card surface="dark" padding="1.5rem" style={{ background: "#141E32" }}>
+            <Card surface="light" padding="1.5rem" style={{ background: "#FFFFFF", border: "1px solid rgba(15,23,42,0.08)", boxShadow: "0 24px 60px -20px rgba(15,23,42,0.35)" }}>
               <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "1.25rem" }}>
-                <span style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", fontSize: "0.8125rem", fontWeight: 600, color: "#94A3B8" }}>
-                  <BarChart size={16} color="#64748B" /> Panel de la clínica
+                <span style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", fontSize: "0.8125rem", fontWeight: 600, color: "#64748B" }}>
+                  <BarChart size={16} color="#94A3B8" /> Panel de la clínica
                 </span>
-                <span style={{ display: "inline-flex", alignItems: "center", gap: "0.4rem", fontSize: "0.6875rem", fontWeight: 600, color: "#DC2626", background: "rgba(185,28,28,0.12)", border: "1px solid rgba(185,28,28,0.25)", padding: "0.25rem 0.5rem", borderRadius: 999 }}>
+                <span style={{ display: "inline-flex", alignItems: "center", gap: "0.4rem", fontSize: "0.6875rem", fontWeight: 600, color: "#DC2626", background: "rgba(220,38,38,0.08)", border: "1px solid rgba(220,38,38,0.20)", padding: "0.25rem 0.5rem", borderRadius: 999 }}>
                   <span style={{ width: 6, height: 6, borderRadius: 999, background: "#DC2626" }} /> SIN SISTEMA
                 </span>
               </div>
@@ -41,22 +41,22 @@ function Hero() {
                   { icon: <MessageCircle size={18} />, v: "12", l: "leads sin responder" },
                   { icon: <CalendarX size={18} />, v: "3", l: "no-shows esta semana" },
                 ].map((m, i) => (
-                  <div key={i} style={{ background: "#0F1827", border: "1px solid rgba(148,163,184,0.10)", borderRadius: 12, padding: "1rem" }}>
-                    <Stat value={m.v} label={m.l} tone="danger" icon={m.icon} />
+                  <div key={i} style={{ background: "#F8FAFC", border: "1px solid rgba(15,23,42,0.06)", borderRadius: 12, padding: "1rem" }}>
+                    <Stat value={m.v} label={m.l} tone="danger" surface="light" icon={m.icon} />
                   </div>
                 ))}
               </div>
-              <div style={{ marginTop: "0.875rem", background: "#0F1827", border: "1px solid rgba(185,28,28,0.20)", borderRadius: 12, padding: "1.125rem 1rem", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+              <div style={{ marginTop: "0.875rem", background: "#FEF2F2", border: "1px solid rgba(220,38,38,0.16)", borderRadius: 12, padding: "1.125rem 1rem", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
                 <div>
-                  <div style={{ fontSize: "1.875rem", fontWeight: 700, letterSpacing: "-0.02em", color: "#F87171", lineHeight: 1 }}>€4.200</div>
-                  <div style={{ fontSize: "0.8125rem", color: "#94A3B8", marginTop: "0.375rem" }}>en oportunidades perdidas</div>
+                  <div style={{ fontSize: "1.875rem", fontWeight: 700, letterSpacing: "-0.02em", color: "#DC2626", lineHeight: 1 }}>€4.200</div>
+                  <div style={{ fontSize: "0.8125rem", color: "#64748B", marginTop: "0.375rem" }}>en oportunidades perdidas</div>
                 </div>
-                <TrendingDown size={40} color="#7F1D1D" strokeWidth={1.75} />
+                <TrendingDown size={40} color="#FCA5A5" strokeWidth={1.75} />
               </div>
               {/* mini sparkbars */}
               <div style={{ display: "flex", alignItems: "flex-end", gap: 5, height: 40, marginTop: "1rem", padding: "0 2px" }}>
                 {[40, 55, 38, 62, 30, 48, 26, 58, 22, 44, 18, 34].map((h, i) => (
-                  <div key={i} style={{ flex: 1, height: `${h}%`, background: i % 2 ? "rgba(148,163,184,0.18)" : "rgba(148,163,184,0.30)", borderRadius: 2 }} />
+                  <div key={i} style={{ flex: 1, height: `${h}%`, background: i % 2 ? "rgba(15,23,42,0.10)" : "rgba(15,23,42,0.20)", borderRadius: 2 }} />
                 ))}
               </div>
             </Card>
