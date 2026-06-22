@@ -12,14 +12,14 @@ function Services() {
     },
     {
       name: "Recepción Inteligente 24/7",
-      price: "desde 1.000€", cadence: "/ mes",
+      price: "1.500€", cadence: "setup", monthly: "+ 397€ / mes",
       ideal: "Clínicas que quieren automatizar la captación y el seguimiento de pacientes.",
       features: ["Automatización de WhatsApp 24/7", "CRM básico con clasificación de leads", "Seguimiento automático de oportunidades", "Recordatorios de cita y reducción de no-shows", "Recuperación de leads inactivos", "Informe mensual de conversión"],
       cta: "Solicitar información", variant: "solid-dark", featured: true,
     },
     {
       name: "Recepción Inteligente Pro",
-      price: "desde 2.500€", cadence: "/ mes",
+      price: "2.500€", cadence: "setup", monthly: "+ 597€ / mes",
       ideal: "Clínicas con volumen alto o que quieren un sistema completo.",
       features: ["Todo lo del plan 24/7, más:", "Multi-canal (Instagram DM, formularios, Google)", "Centralización total de comunicación", "Seguimiento post-consulta y reactivación", "Soporte prioritario"],
       cta: "Solicitar información", variant: "outline", featured: false,
@@ -44,6 +44,7 @@ function Services() {
                 <span style={{ fontSize: "2rem", fontWeight: 800, letterSpacing: "-0.03em", color: "#111827" }}>{t.price}</span>
                 <span style={{ fontSize: "0.875rem", color: "#64748B", fontWeight: 500 }}>{t.cadence}</span>
               </div>
+              {t.monthly && <div style={{ fontSize: "1.0625rem", fontWeight: 700, letterSpacing: "-0.01em", color: "#111827", marginBottom: "0.25rem" }}>{t.monthly}</div>}
               <p style={{ margin: "0.75rem 0 1.5rem", fontSize: "0.875rem", lineHeight: 1.55, color: "#475569", minHeight: "3.4rem" }}>{t.ideal}</p>
               <ul style={{ listStyle: "none", margin: "0 0 1.75rem", padding: 0, display: "flex", flexDirection: "column", gap: "0.75rem", flex: 1 }}>
                 {t.features.map((f, j) => (

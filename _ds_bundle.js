@@ -1,4 +1,4 @@
-/* @ds-bundle: {"format":3,"namespace":"OltraSystemsDesignSystem_36063f","components":[{"name":"Badge","sourcePath":"components/core/Badge.jsx"},{"name":"Button","sourcePath":"components/core/Button.jsx"},{"name":"Card","sourcePath":"components/core/Card.jsx"},{"name":"Eyebrow","sourcePath":"components/core/Eyebrow.jsx"},{"name":"Input","sourcePath":"components/core/Input.jsx"},{"name":"Logo","sourcePath":"components/core/Logo.jsx"},{"name":"Stat","sourcePath":"components/core/Stat.jsx"}],"sourceHashes":{"components/core/Badge.jsx":"cb6b8044a5f5","components/core/Button.jsx":"04b6524575bd","components/core/Card.jsx":"f43f84be7392","components/core/Eyebrow.jsx":"3edf3e601df9","components/core/Input.jsx":"443c140c27d0","components/core/Logo.jsx":"e4e1f2d0f9ae","components/core/Stat.jsx":"87c259466df9","ui_kits/landing/Calculator.jsx":"9c3d2c1ff8bf","ui_kits/landing/Comparison.jsx":"60ab8a6c0bc8","ui_kits/landing/CrmDemo.jsx":"e47828017670","ui_kits/landing/Faq.jsx":"62c5bf46d9df","ui_kits/landing/FinalCta.jsx":"fdf3b0980a92","ui_kits/landing/Hero.jsx":"f3f6b879dddd","ui_kits/landing/LeadMagnets.jsx":"b05af6aa856d","ui_kits/landing/Navbar.jsx":"79d6c4f01191","ui_kits/landing/Problem.jsx":"9a3f7f8358a0","ui_kits/landing/Process.jsx":"a03fbf542a2f","ui_kits/landing/Qualification.jsx":"36610046a526","ui_kits/landing/SelfDiagnosis.jsx":"fa8880a92590","ui_kits/landing/Services.jsx":"d9f51c20beef","ui_kits/landing/icons.jsx":"899226c0633c","ui_kits/landing/shared.jsx":"fdb26a57dd77"},"inlinedExternals":[],"unexposedExports":[]} */
+/* @ds-bundle: {"format":3,"namespace":"OltraSystemsDesignSystem_36063f","components":[{"name":"Badge","sourcePath":"components/core/Badge.jsx"},{"name":"Button","sourcePath":"components/core/Button.jsx"},{"name":"Card","sourcePath":"components/core/Card.jsx"},{"name":"Eyebrow","sourcePath":"components/core/Eyebrow.jsx"},{"name":"Input","sourcePath":"components/core/Input.jsx"},{"name":"Logo","sourcePath":"components/core/Logo.jsx"},{"name":"Stat","sourcePath":"components/core/Stat.jsx"}],"sourceHashes":{"components/core/Badge.jsx":"cb6b8044a5f5","components/core/Button.jsx":"04b6524575bd","components/core/Card.jsx":"f43f84be7392","components/core/Eyebrow.jsx":"3edf3e601df9","components/core/Input.jsx":"443c140c27d0","components/core/Logo.jsx":"e4e1f2d0f9ae","components/core/Stat.jsx":"87c259466df9","ui_kits/landing/Calculator.jsx":"9c3d2c1ff8bf","ui_kits/landing/Comparison.jsx":"60ab8a6c0bc8","ui_kits/landing/CrmDemo.jsx":"e47828017670","ui_kits/landing/Faq.jsx":"62c5bf46d9df","ui_kits/landing/FinalCta.jsx":"fdf3b0980a92","ui_kits/landing/Hero.jsx":"f3f6b879dddd","ui_kits/landing/LeadMagnets.jsx":"b05af6aa856d","ui_kits/landing/Navbar.jsx":"79d6c4f01191","ui_kits/landing/Problem.jsx":"9a3f7f8358a0","ui_kits/landing/Process.jsx":"a03fbf542a2f","ui_kits/landing/Qualification.jsx":"36610046a526","ui_kits/landing/SelfDiagnosis.jsx":"fa8880a92590","ui_kits/landing/Services.jsx":"324d8b624d3f","ui_kits/landing/icons.jsx":"899226c0633c","ui_kits/landing/shared.jsx":"fdb26a57dd77"},"inlinedExternals":[],"unexposedExports":[]} */
 
 (() => {
 
@@ -3408,8 +3408,9 @@ function Services() {
     featured: false
   }, {
     name: "Recepción Inteligente 24/7",
-    price: "desde 1.000€",
-    cadence: "/ mes",
+    price: "1.500€",
+    cadence: "setup",
+    monthly: "+ 397€ / mes",
     ideal: "Clínicas que quieren automatizar la captación y el seguimiento de pacientes.",
     features: ["Automatización de WhatsApp 24/7", "CRM básico con clasificación de leads", "Seguimiento automático de oportunidades", "Recordatorios de cita y reducción de no-shows", "Recuperación de leads inactivos", "Informe mensual de conversión"],
     cta: "Solicitar información",
@@ -3417,8 +3418,9 @@ function Services() {
     featured: true
   }, {
     name: "Recepción Inteligente Pro",
-    price: "desde 2.500€",
-    cadence: "/ mes",
+    price: "2.500€",
+    cadence: "setup",
+    monthly: "+ 597€ / mes",
     ideal: "Clínicas con volumen alto o que quieren un sistema completo.",
     features: ["Todo lo del plan 24/7, más:", "Multi-canal (Instagram DM, formularios, Google)", "Centralización total de comunicación", "Seguimiento post-consulta y reactivación", "Soporte prioritario"],
     cta: "Solicitar información",
@@ -3512,7 +3514,15 @@ function Services() {
       color: "#64748B",
       fontWeight: 500
     }
-  }, t.cadence)), /*#__PURE__*/React.createElement("p", {
+  }, t.cadence)), t.monthly && /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: "1.0625rem",
+      fontWeight: 700,
+      letterSpacing: "-0.01em",
+      color: "#111827",
+      marginBottom: "0.25rem"
+    }
+  }, t.monthly), /*#__PURE__*/React.createElement("p", {
     style: {
       margin: "0.75rem 0 1.5rem",
       fontSize: "0.875rem",
