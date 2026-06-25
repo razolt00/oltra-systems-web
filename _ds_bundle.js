@@ -1,4 +1,4 @@
-/* @ds-bundle: {"format":3,"namespace":"OltraSystemsDesignSystem_36063f","components":[{"name":"Badge","sourcePath":"components/core/Badge.jsx"},{"name":"Button","sourcePath":"components/core/Button.jsx"},{"name":"Card","sourcePath":"components/core/Card.jsx"},{"name":"Eyebrow","sourcePath":"components/core/Eyebrow.jsx"},{"name":"Input","sourcePath":"components/core/Input.jsx"},{"name":"Logo","sourcePath":"components/core/Logo.jsx"},{"name":"Stat","sourcePath":"components/core/Stat.jsx"}],"sourceHashes":{"components/core/Badge.jsx":"cb6b8044a5f5","components/core/Button.jsx":"04b6524575bd","components/core/Card.jsx":"f43f84be7392","components/core/Eyebrow.jsx":"3edf3e601df9","components/core/Input.jsx":"443c140c27d0","components/core/Logo.jsx":"e4e1f2d0f9ae","components/core/Stat.jsx":"87c259466df9","ui_kits/landing/Calculator.jsx":"9c3d2c1ff8bf","ui_kits/landing/Comparison.jsx":"60ab8a6c0bc8","ui_kits/landing/CrmDemo.jsx":"e47828017670","ui_kits/landing/Faq.jsx":"62c5bf46d9df","ui_kits/landing/FinalCta.jsx":"fdf3b0980a92","ui_kits/landing/Hero.jsx":"f3f6b879dddd","ui_kits/landing/LeadMagnets.jsx":"b05af6aa856d","ui_kits/landing/Navbar.jsx":"79d6c4f01191","ui_kits/landing/Problem.jsx":"9a3f7f8358a0","ui_kits/landing/Process.jsx":"a03fbf542a2f","ui_kits/landing/Qualification.jsx":"36610046a526","ui_kits/landing/SelfDiagnosis.jsx":"fa8880a92590","ui_kits/landing/Services.jsx":"324d8b624d3f","ui_kits/landing/icons.jsx":"899226c0633c","ui_kits/landing/shared.jsx":"fdb26a57dd77"},"inlinedExternals":[],"unexposedExports":[]} */
+/* @ds-bundle: {"format":3,"namespace":"OltraSystemsDesignSystem_36063f","components":[{"name":"Badge","sourcePath":"components/core/Badge.jsx"},{"name":"Button","sourcePath":"components/core/Button.jsx"},{"name":"Card","sourcePath":"components/core/Card.jsx"},{"name":"Eyebrow","sourcePath":"components/core/Eyebrow.jsx"},{"name":"Input","sourcePath":"components/core/Input.jsx"},{"name":"Logo","sourcePath":"components/core/Logo.jsx"},{"name":"Stat","sourcePath":"components/core/Stat.jsx"}],"sourceHashes":{"components/core/Badge.jsx":"cb6b8044a5f5","components/core/Button.jsx":"04b6524575bd","components/core/Card.jsx":"f43f84be7392","components/core/Eyebrow.jsx":"3edf3e601df9","components/core/Input.jsx":"443c140c27d0","components/core/Logo.jsx":"e4e1f2d0f9ae","components/core/Stat.jsx":"87c259466df9","ui_kits/landing/Calculator.jsx":"9c3d2c1ff8bf","ui_kits/landing/Comparison.jsx":"60ab8a6c0bc8","ui_kits/landing/CrmDemo.jsx":"e47828017670","ui_kits/landing/Faq.jsx":"62c5bf46d9df","ui_kits/landing/FinalCta.jsx":"fdf3b0980a92","ui_kits/landing/Hero.jsx":"f3f6b879dddd","ui_kits/landing/LeadMagnets.jsx":"b05af6aa856d","ui_kits/landing/Navbar.jsx":"79d6c4f01191","ui_kits/landing/Problem.jsx":"9a3f7f8358a0","ui_kits/landing/Process.jsx":"a03fbf542a2f","ui_kits/landing/Qualification.jsx":"36610046a526","ui_kits/landing/SelfDiagnosis.jsx":"fa8880a92590","ui_kits/landing/Services.jsx":"71c79bc155ba","ui_kits/landing/icons.jsx":"899226c0633c","ui_kits/landing/shared.jsx":"fdb26a57dd77"},"inlinedExternals":[],"unexposedExports":[]} */
 
 (() => {
 
@@ -3399,16 +3399,17 @@ function Services() {
   } = window;
   const tiers = [{
     name: "Diagnóstico Express de Fugas",
-    price: "17€",
-    cadence: "pago único",
+    price: "Gratis",
+    cadence: "promoción",
+    promo: true,
     ideal: "Clínicas que quieren saber exactamente dónde pierden pacientes antes de invertir más.",
     features: ["Auditoría de WhatsApp, recepción e Instagram", "Loom personalizado con hallazgos (5–10 min)", "Mini informe con 3–5 mejoras accionables", "Sin compromisos adicionales"],
-    cta: "Solicitar Diagnóstico — 17€",
+    cta: "Solicitar Diagnóstico Gratis",
     variant: "outline",
     featured: false
   }, {
     name: "Recepción Inteligente 24/7",
-    price: "1.500€",
+    price: "aprox. 1.500€",
     cadence: "setup",
     monthly: "+ 397€ / mes",
     ideal: "Clínicas que quieren automatizar la captación y el seguimiento de pacientes.",
@@ -3418,7 +3419,7 @@ function Services() {
     featured: true
   }, {
     name: "Recepción Inteligente Pro",
-    price: "2.500€",
+    price: "aprox. 2.500€",
     cadence: "setup",
     monthly: "+ 597€ / mes",
     ideal: "Clínicas con volumen alto o que quieren un sistema completo.",
@@ -3503,10 +3504,10 @@ function Services() {
     }
   }, /*#__PURE__*/React.createElement("span", {
     style: {
-      fontSize: "2rem",
+      fontSize: t.promo ? "2.25rem" : "2rem",
       fontWeight: 800,
       letterSpacing: "-0.03em",
-      color: "#111827"
+      color: t.promo ? "#15803D" : "#111827"
     }
   }, t.price), /*#__PURE__*/React.createElement("span", {
     style: {

@@ -5,21 +5,21 @@ function Services() {
   const tiers = [
     {
       name: "Diagnóstico Express de Fugas",
-      price: "17€", cadence: "pago único",
+      price: "Gratis", cadence: "promoción", promo: true,
       ideal: "Clínicas que quieren saber exactamente dónde pierden pacientes antes de invertir más.",
       features: ["Auditoría de WhatsApp, recepción e Instagram", "Loom personalizado con hallazgos (5–10 min)", "Mini informe con 3–5 mejoras accionables", "Sin compromisos adicionales"],
-      cta: "Solicitar Diagnóstico — 17€", variant: "outline", featured: false,
+      cta: "Solicitar Diagnóstico Gratis", variant: "outline", featured: false,
     },
     {
       name: "Recepción Inteligente 24/7",
-      price: "1.500€", cadence: "setup", monthly: "+ 397€ / mes",
+      price: "aprox. 1.500€", cadence: "setup", monthly: "+ 397€ / mes",
       ideal: "Clínicas que quieren automatizar la captación y el seguimiento de pacientes.",
       features: ["Automatización de WhatsApp 24/7", "CRM básico con clasificación de leads", "Seguimiento automático de oportunidades", "Recordatorios de cita y reducción de no-shows", "Recuperación de leads inactivos", "Informe mensual de conversión"],
       cta: "Solicitar información", variant: "solid-dark", featured: true,
     },
     {
       name: "Recepción Inteligente Pro",
-      price: "2.500€", cadence: "setup", monthly: "+ 597€ / mes",
+      price: "aprox. 2.500€", cadence: "setup", monthly: "+ 597€ / mes",
       ideal: "Clínicas con volumen alto o que quieren un sistema completo.",
       features: ["Todo lo del plan 24/7, más:", "Multi-canal (Instagram DM, formularios, Google)", "Centralización total de comunicación", "Seguimiento post-consulta y reactivación", "Soporte prioritario"],
       cta: "Solicitar información", variant: "outline", featured: false,
@@ -41,7 +41,7 @@ function Services() {
               {t.featured && <div style={{ marginBottom: "1rem" }}><Badge variant="featured">Más popular</Badge></div>}
               <h3 style={{ margin: 0, fontSize: "1.1875rem", fontWeight: 600, letterSpacing: "-0.01em", color: "#111827" }}>{t.name}</h3>
               <div style={{ display: "flex", alignItems: "baseline", gap: "0.4rem", margin: "1rem 0 0.25rem" }}>
-                <span style={{ fontSize: "2rem", fontWeight: 800, letterSpacing: "-0.03em", color: "#111827" }}>{t.price}</span>
+                <span style={{ fontSize: t.promo ? "2.25rem" : "2rem", fontWeight: 800, letterSpacing: "-0.03em", color: t.promo ? "#15803D" : "#111827" }}>{t.price}</span>
                 <span style={{ fontSize: "0.875rem", color: "#64748B", fontWeight: 500 }}>{t.cadence}</span>
               </div>
               {t.monthly && <div style={{ fontSize: "1.0625rem", fontWeight: 700, letterSpacing: "-0.01em", color: "#111827", marginBottom: "0.25rem" }}>{t.monthly}</div>}
